@@ -9,14 +9,14 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 
 # Fetch Stock Data using yfinance
-def fetch_stock_data(tickers, start='2020-01-01', end='2025-01-01'):
+def fetch_stock_data(tickers, start='', end=''):
     stock_data = {}
     for ticker in tickers:
         stock_data[ticker] = yf.download(ticker, start=start, end=end)
     return stock_data
 
 # Fetch News Articles using NewsAPI
-API_KEY = "your_news_api_key_here"
+API_KEY = "" #news api key here
 BASE_URL = "https://newsapi.org/v2/everything"
 
 def fetch_news(stock_name, from_date, to_date):
@@ -108,7 +108,7 @@ def recommend_stocks(model, stock_data, sentiment_summary):
 # Main Function to Fetch Data, Process, Train, and Recommend
 def main():
     # Example NSE500 tickers (replace with actual NSE500 tickers)
-    nse500_tickers = ['INFY.NS', 'TCS.NS', 'RELIANCE.NS']  # Replace with actual tickers
+    nse500_tickers = [for tickers in pd.read_csv("ind_nifty500list.csv")["Symbol"] ticker+".NS"]#extract all tickers
 
     # 1. Fetch Stock Data
     stock_data = fetch_stock_data(nse500_tickers)
