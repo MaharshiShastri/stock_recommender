@@ -108,7 +108,7 @@ def recommend_stocks(model, stock_data, sentiment_summary):
 # Main Function to Fetch Data, Process, Train, and Recommend
 def main():
     # Example NSE500 tickers (replace with actual NSE500 tickers)
-    nse500_tickers = [for tickers in pd.read_csv("ind_nifty500list.csv")["Symbol"] ticker+".NS"]#extract all tickers
+    nse500_tickers = [ticker+".NS" for ticker in pd.read_csv("ind_nifty500list.csv")["Symbol"] ]#extract all tickers
 
     # 1. Fetch Stock Data
     stock_data = fetch_stock_data(nse500_tickers)
