@@ -1,0 +1,1 @@
+Built an ML-based system that suggests buy recommendations for NIFTY 500 stocks by analyzing historical pricing data & technical indicators. Demonstrated model performance using accuracy and precision metrics, supporting investment insights with data-driven signals. Combined with NISM XV to be certified regulatory compliance and innovation.
